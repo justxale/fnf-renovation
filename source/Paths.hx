@@ -12,10 +12,10 @@ import openfl.utils.AssetType;
 import openfl.utils.Assets as OpenFlAssets;
 import lime.utils.Assets;
 import flixel.FlxSprite;
-#if MODS_ALLOWED
+
 import sys.io.File;
 import sys.FileSystem;
-#end
+
 import flixel.graphics.FlxGraphic;
 import openfl.display.BitmapData;
 

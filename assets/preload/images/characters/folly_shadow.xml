@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="folly_shadow.png"><SubTexture name="folly_shadow idle0000" x="0" y="0" width="1357" height="1372" frameX="0" frameY="0" frameWidth="1357" frameHeight="1372" />
+<SubTexture name="folly_shadow idle0001" x="1357" y="0" width="1357" height="1372" frameX="0" frameY="0" frameWidth="1357" frameHeight="1372" />
+<SubTexture name="folly_shadow idle0002" x="2714" y="0" width="1357" height="1372" frameX="0" frameY="0" frameWidth="1357" frameHeight="1372" />
+<SubTexture name="folly_shadow idle0003" x="4071" y="0" width="1357" height="1372" frameX="0" frameY="0" frameWidth="1357" frameHeight="1372" />
+<SubTexture name="folly_shadow idle0004" x="0" y="1372" width="1357" height="1372" frameX="0" frameY="0" frameWidth="1357" frameHeight="1372" />
+<SubTexture name="folly_shadow idle0005" x="1357" y="1372" width="1357" height="1372" frameX="0" frameY="0" frameWidth="1357" frameHeight="1372" />
+<SubTexture name="folly_shadow idle0006" x="2714" y="1372" width="1357" height="1372" frameX="0" frameY="0" frameWidth="1357" frameHeight="1372" />
+<SubTexture name="folly_shadow idle0007" x="4071" y="1372" width="1357" height="1372" frameX="0" frameY="0" frameWidth="1357" frameHeight="1372" />
+<SubTexture name="folly_shadow idle0008" x="0" y="2744" width="1357" height="1372" frameX="0" frameY="0" frameWidth="1357" frameHeight="1372" />
+<SubTexture name="folly_shadow idle0009" x="1357" y="2744" width="1357" height="1372" frameX="0" frameY="0" frameWidth="1357" frameHeight="1372" />
+<SubTexture name="folly_shadow signUP0000" x="2714" y="2744" width="1357" height="1372" frameX="0" frameY="0" frameWidth="1357" frameHeight="1372" />
+<SubTexture name="folly_shadow signUP0001" x="4071" y="2744" width="1357" height="1372" frameX="0" frameY="0" frameWidth="1357" frameHeight="1372" />
+<SubTexture name="folly_shadow signUP0002" x="0" y="4116" width="1357" height="1372" frameX="0" frameY="0" frameWidth="1357" frameHeight="1372" />
+<SubTexture name="folly_shadow signLEFT0000" x="1357" y="4116" width="1357" height="1372" frameX="0" frameY="0" frameWidth="1357" frameHeight="1372" />
+<SubTexture name="folly_shadow signLEFT0001" x="2714" y="4116" width="1357" height="1372" frameX="0" frameY="0" frameWidth="1357" frameHeight="1372" />
+<SubTexture name="folly_shadow signLEFT0002" x="4071" y="4116" width="1357" height="1372" frameX="0" frameY="0" frameWidth="1357" frameHeight="1372" />
+<SubTexture name="folly_shadow signDOWN0000" x="0" y="5488" width="1357" height="1372" frameX="0" frameY="0" frameWidth="1357" frameHeight="1372" />
+<SubTexture name="folly_shadow signDOWN0001" x="1357" y="5488" width="1357" height="1372" frameX="0" frameY="0" frameWidth="1357" frameHeight="1372" />
+<SubTexture name="folly_shadow signDOWN0002" x="2714" y="5488" width="1357" height="1372" frameX="0" frameY="0" frameWidth="1357" frameHeight="1372" />
+<SubTexture name="folly_shadow signRIGHT0000" x="4071" y="5488" width="1357" height="1372" frameX="0" frameY="0" frameWidth="1357" frameHeight="1372" />
+<SubTexture name="folly_shadow signRIGHT0001" x="0" y="6860" width="1357" height="1372" frameX="0" frameY="0" frameWidth="1357" frameHeight="1372" />
+<SubTexture name="folly_shadow signRIGHT0002" x="1357" y="6860" width="1357" height="1372" frameX="0" frameY="0" frameWidth="1357" frameHeight="1372" />
+</TextureAtlas>

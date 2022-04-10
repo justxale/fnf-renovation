@@ -80,7 +80,7 @@ class Note extends FlxSprite
 	public var hitCausesMiss:Bool = false;
 	public var distance:Float = 2000; //plan on doing scroll directions soon -bb
 
-        public static var holdArrowScales:Map<String, Float> = [
+    public static var holdArrowScales:Map<String, Float> = [
 		'Future'	=> 0.565,
 		'Chip'		=> 0.565
 	];
@@ -108,19 +108,31 @@ class Note extends FlxSprite
 			switch(value) {
 				case 'Hurt Note':
 					ignoreNote = mustPress;
-					reloadNote('HURT','','', true);
-					noteSplashTexture = 'HURTnoteSplashes';
+					reloadNote('customNotes/HURT', '', '', true);
 					colorSwap.hue = 0;
 					colorSwap.saturation = 0;
 					colorSwap.brightness = 0;
-					if(isSustainNote) {
+					if(isSustainNote)
 						missHealth = 0.1;
-					} else {
+					else
 						missHealth = 0.3;
-					}
 					hitCausesMiss = true;
+
+				case 'Bullet':
+					reloadNote('customNotes/Bullet', '', '', true);
+					colorSwap.hue = 0;
+					colorSwap.saturation = 0;
+					colorSwap.brightness = 0;
+
+				case 'Candy': 
+					reloadNote('customNotes/Candy', '', '', true);
+					colorSwap.hue = 0;
+					colorSwap.saturation = 0;
+					colorSwap.brightness = 0;
+
 				case 'No Animation':
 					noAnimation = true;
+
 				case 'GF Sing':
 					gfNote = true;
 			}
@@ -235,15 +247,11 @@ class Note extends FlxSprite
 					var holdScale:Float = 1;
 					if(holdArrowScales.exists(ClientPrefs.noteSkin))
 					{
-                                                if(prevNote.deftype)
-                                                {
-						holdScale = 1;
-                                                }
-                                                else
-                                                {
-                                                holdScale = holdArrowScales.get(ClientPrefs.noteSkin);
-                                                }
-					}
+                        if(prevNote.deftype)
+							holdScale = 1;
+                        else
+		                	holdScale = holdArrowScales.get(ClientPrefs.noteSkin);
+                    }
 					prevNote.scale.y *= holdScale;
 				}
 				prevNote.updateHitbox();
@@ -329,10 +337,10 @@ class Note extends FlxSprite
 		if(isSustainNote) {
 			scale.y = lastScaleY;
 			if(ClientPrefs.keSustains) {
-				if(prevNote.deftype){
-                                scale.y *= 1;}
-                                else{
-                                 scale.y *= 0.75;}
+				if(prevNote.deftype)
+                    scale.y *= 1;
+                else
+                    scale.y *= 0.75;
 			}
 		}
 		updateHitbox();

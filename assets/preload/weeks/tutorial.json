@@ -1,26 +1,31 @@
 {
-	"storyName": "How to funk",
+	"storyName": "tutorial",
 	"difficulties": "",
 	"hideFreeplay": false,
-	"weekBackground": "stage",
+	"weekBackground": "tut",
 	"weekBefore": "tutorial",
-	"startUnlocked": true,
-	"weekCharacters": [
-		"",
-		"gf",
-		"bf"
+	"freeplayColor": [
+		146,
+		113,
+		253
 	],
+	"startUnlocked": true,
+	"hideStoryMode": false,
 	"songs": [
 		[
-			"Tutorial",
+			"tutorial",
 			"gf",
 			[
-				165,
-				0,
-				77
+				220,
+				215,
+				220
 			]
 		]
 	],
-	"hideStoryMode": false,
-	"weekName": "Tutorial"
+	"weekCharacters": [
+		"",
+		"bf",
+		"gf"
+	],
+	"weekName": "tutorial"
 }

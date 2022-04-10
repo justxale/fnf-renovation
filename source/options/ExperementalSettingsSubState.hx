@@ -34,25 +34,14 @@ class ExperementalSettingsSubState extends BaseOptionsMenu
 		title = 'Experemental Settings';
 		rpcTitle = 'Experemental Settings Menu'; //for Discord Rich Presence
 
-
-                var option:Option = new Option('Instant Respawn',
+        var option:Option = new Option('Instant Respawn',
 			"If checked, you will automatically respawn, skipping the game over animation.",
                         'instantRespawn',
 			'bool',
 			false);
 		addOption(option);
 
-                var option:Option = new Option('Note Skin:',
-			"Funny notes dropping down, how should they look like?",
-			'noteSkin',
-			'string',
-			'Default',
-			['Default', 'Future', 'Chip', 'Grafex']);
-		option.showNotes = true;
-		option.onChange = onChangeNoteSkin;
-		addOption(option);
-
-                var option:Option = new Option('Green Screen Mode',
+        var option:Option = new Option('Green Screen Mode',
 			"If checked, makes screen green.",
 			'greenscreenmode',
 			'bool',

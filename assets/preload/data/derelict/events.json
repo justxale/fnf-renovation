@@ -1,0 +1,69 @@
+{
+	"song": {
+		"speed": 2.8,
+		"stage": "annabg",
+		"player1": "bf",
+		"player2": "anna_angry",
+		"player3": null,
+		"events": [
+			[
+				4272.72727272727,
+				[
+					[
+						"Play Animation",
+						"exhalation",
+						"Dad"
+					]
+				]
+			],
+			[
+				4363.63636363636,
+				[
+					[
+						"Play Animation",
+						"scream",
+						"Dad"
+					]
+				]
+			],
+			[
+				30181.8181818182,
+				[
+					[
+						"Play Animation",
+						"exhalation",
+						"Dad"
+					]
+				]
+			],
+			[
+				71272.7272727273,
+				[
+					[
+						"Screen Shake",
+						"1.2, 0.05",
+						""
+					]
+				]
+			],
+			[
+				71272.7272727273,
+				[
+					[
+						"Play Animation",
+						"scream",
+						"Dad"
+					]
+				]
+			]
+		],
+		"notes": [],
+		"splashSkin": null,
+		"validScore": false,
+		"gfVersion": "gf",
+		"bpm": 165,
+		"arrowSkin": null,
+		"needsVoices": true,
+		"song": "derelict"
+	}
+}

@@ -1,0 +1,10 @@
+{
+	"idle_anim": "anna dance",
+	"image": "menu_anna",
+	"position": [
+		460,
+		391
+	],
+	"scale": 0.35,
+	"confirm_anim": "M Dad Idle"
+}
