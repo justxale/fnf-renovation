@@ -7,22 +7,12 @@
 		"player3": null,
 		"events": [
 			[
-				4272.72727272727,
-				[
-					[
-						"Play Animation",
-						"exhalation",
-						"Dad"
-					]
-				]
-			],
-			[
 				4363.63636363636,
 				[
 					[
-						"Play Animation",
-						"scream",
-						"Dad"
+						"Screen Shake",
+						"1.2, 0.05",
+						""
 					]
 				]
 			],
@@ -45,16 +35,6 @@
 						""
 					]
 				]
-			],
-			[
-				71272.7272727273,
-				[
-					[
-						"Play Animation",
-						"scream",
-						"Dad"
-					]
-				]
 			]
 		],
 		"notes": [],
@@ -64,6 +44,6 @@
 		"bpm": 165,
 		"arrowSkin": null,
 		"needsVoices": true,
-		"song": "derelict"
+		"song": "Derelict"
 	}
 }

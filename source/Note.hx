@@ -115,7 +115,7 @@ class Note extends FlxSprite
 					if(isSustainNote)
 						missHealth = 0.1;
 					else
-						missHealth = 0.3;
+						missHealth = 0.3;	
 					hitCausesMiss = true;
 
 				case 'Bullet':

@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="pistol.png"><SubTexture name="pistol shot0000" x="0" y="0" width="944" height="607" frameX="0" frameY="0" frameWidth="944" frameHeight="607" />
+<SubTexture name="pistol shot0001" x="944" y="0" width="944" height="607" frameX="0" frameY="0" frameWidth="944" frameHeight="607" />
+<SubTexture name="pistol shot0002" x="0" y="607" width="944" height="607" frameX="0" frameY="0" frameWidth="944" frameHeight="607" />
+<SubTexture name="pistol shot0003" x="944" y="607" width="944" height="607" frameX="0" frameY="0" frameWidth="944" frameHeight="607" />
+<SubTexture name="pistol shot0004" x="0" y="1214" width="944" height="607" frameX="0" frameY="0" frameWidth="944" frameHeight="607" />
+<SubTexture name="pistol shot0005" x="944" y="1214" width="944" height="607" frameX="0" frameY="0" frameWidth="944" frameHeight="607" />
+</TextureAtlas>

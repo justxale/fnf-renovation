@@ -2804,32 +2804,12 @@
 		"gfVersion": "gf",
 		"events": [
 			[
-				4272.72727272727,
-				[
-					[
-						"Play Animation",
-						"exhalation",
-						"Dad"
-					]
-				]
-			],
-			[
 				4363.63636363636,
 				[
 					[
 						"Screen Shake",
 						"1.2, 0.05",
 						""
-					]
-				]
-			],
-			[
-				4363.63636363636,
-				[
-					[
-						"Play Animation",
-						"screem",
-						"Dad"
 					]
 				]
 			],
@@ -2855,7 +2835,7 @@
 			]
 		],
 		"player3": null,
-		"song": "derelict",
+		"song": "Derelict",
 		"validScore": true,
 		"needsVoices": true,
 		"stage": "annabg",

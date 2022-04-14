@@ -85,9 +85,8 @@ class TitleState extends MusicBeatState
 		Paths.clearUnusedMemory();
 
 		Application.current.window.title = Main.appTitle;
-                WeekData.loadTheFirstEnabledMod();
-
-                FlxG.watch.addQuick("beatShit", curBeat);
+        WeekData.loadTheFirstEnabledMod();
+        FlxG.watch.addQuick("beatShit", curBeat);
 		FlxG.watch.addQuick("stepShit", curStep);
 		
 		var path = Paths.getPreloadPath("images/gfDanceTitle.json");
@@ -98,7 +97,7 @@ class TitleState extends MusicBeatState
 		FlxG.sound.volumeDownKeys = volumeDownKeys;
 		FlxG.sound.volumeUpKeys = volumeUpKeys;
 		FlxG.keys.preventDefaultKeys = [TAB];
-                FlxG.camera.zoom = 1;
+        FlxG.camera.zoom = 1;
 
 		PlayerSettings.init();
 
@@ -106,22 +105,12 @@ class TitleState extends MusicBeatState
 
 		// DEBUG BULLSHIT
 
-		swagShader = new ColorSwap();
 		super.create();
 
-		FlxG.save.bind('grafex', 'xale');
+		FlxG.save.bind('renovation', 'xale');
 		ClientPrefs.loadPrefs();
 
 		Highscore.load();
-
-                bgFlash = new FlxSprite(0, 0).loadGraphic(Paths.image('bgFlash'));
-		bgFlash.visible = true;
-		bgFlash.alpha = 0;
-		bgFlash.scale.set(2, 2);
-		bgFlash.updateHitbox();
-		bgFlash.antialiasing = true;
-		add(bgFlash);
-
 
 		if (FlxG.save.data.weekCompleted != null)
 		{
@@ -158,9 +147,7 @@ class TitleState extends MusicBeatState
 	var gfDance:FlxSprite;
 	var danceLeft:Bool = false;
 	var titleText:FlxSprite;
-	var swagShader:ColorSwap = null;
-    var bgMenu:FlxBackdrop;
-        var bgFlash:FlxSprite;
+    var bgMenu:FlxSprite;
 
 	function startIntro()
 	{
@@ -176,39 +163,28 @@ class TitleState extends MusicBeatState
 		Conductor.changeBPM(102);
 		persistentUpdate = true;
 
-		//bgMenu = new FlxSprite(0, 0).loadGraphic(Paths.image('titleBg'));
-                bgMenu = new FlxBackdrop(Paths.image('titleBg'), 10, 0, true, true);
-		//bgMenu.scale.set(2, 2);
-                bgMenu.velocity.set(70, 70); //thats it :D- snake
+		bgMenu = new FlxSprite(0, 0).loadGraphic(Paths.image('titleBg'));
 		add(bgMenu);
 
 		logoBl = new FlxSprite(titleJSON.titlex, titleJSON.titley);
 		logoBl.frames = Paths.getSparrowAtlas('logoBumpin');
 			
 		logoBl.antialiasing = ClientPrefs.globalAntialiasing;
-		logoBl.animation.addByPrefix('bump', 'logo bumpin', 1, false);
+		logoBl.animation.addByPrefix('bump', 'logo bumpin', 24, false);
 		logoBl.animation.play('bump');
+		logoBl.setGraphicSize(Std.int(logoBl.width * 0.8));
 		logoBl.updateHitbox();
 
-		swagShader = new ColorSwap();
-
 		gfDance = new FlxSprite(titleJSON.gfx, titleJSON.gfy);
-	
-		gfDance.frames = Paths.getSparrowAtlas('gfDanceTitle');
-		
-		gfDance.animation.addByIndices('danceLeft', 'gfDance', [30, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14], "", 24, false);
-		gfDance.animation.addByIndices('danceRight', 'gfDance', [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29], "", 24, false);
-	
+		gfDance.frames = Paths.getSparrowAtlas('gfDanceTitle');		
+		gfDance.animation.addByPrefix('beat', 'gfDance', 24, false);
+		gfDance.animation.play('beat');
 		gfDance.antialiasing = ClientPrefs.globalAntialiasing;
+		gfDance.setGraphicSize(Std.int(gfDance.width * 0.7));
+		gfDance.updateHitbox();
+
 		add(gfDance);
-		gfDance.shader = swagShader.shader;
-        logoBltrail = new FlxTrail(logoBl, 24, 0, 0.4, 0.02);
-		add(logoBltrail);
         add(logoBl);
-        logoBltrail.shader = swagShader.shader;
-		logoBl.shader = swagShader.shader;
-       
-        FlxTween.tween(logoBl, {y: logoBl.y + 80}, 0.6, {ease: FlxEase.quadInOut, type: PINGPONG}); //Bruh -snake
 
 		titleText = new FlxSprite(titleJSON.startx, titleJSON.starty);		
 		titleText.frames = Paths.getSparrowAtlas('titleEnter');
@@ -216,6 +192,7 @@ class TitleState extends MusicBeatState
 		titleText.animation.addByPrefix('press', "ENTER PRESSED", 24);
 		titleText.antialiasing = ClientPrefs.globalAntialiasing;
 		titleText.animation.play('idle');
+		titleText.setGraphicSize(Std.int(titleText.width * 0.6));
 		titleText.updateHitbox();
 		add(titleText);
 
@@ -270,7 +247,7 @@ class TitleState extends MusicBeatState
 		FlxG.watch.addQuick("stepShit", curStep);
 		if (FlxG.sound.music != null)
 		Conductor.songPosition = FlxG.sound.music.time;
-                FlxG.camera.zoom = FlxMath.lerp(1, FlxG.camera.zoom, 0.95);
+        FlxG.camera.zoom = FlxMath.lerp(1, FlxG.camera.zoom, 0.95);
 
 		if(FlxG.keys.justPressed.F11)
             FlxG.fullscreen = !FlxG.fullscreen;
@@ -315,12 +292,6 @@ class TitleState extends MusicBeatState
 				FlxG.sound.play(Paths.sound('confirmMenu'), 0.7);
                 FlxTween.tween(FlxG.camera, {zoom: 1.04}, 0.2, {ease: FlxEase.cubeInOut, type: ONESHOT, startDelay: 0});
                 FlxTween.tween(FlxG.camera, {zoom: 1}, 0.2, {ease: FlxEase.cubeInOut, type: ONESHOT, startDelay: 0.25});
-				FlxTween.tween(gfDance, {y:2000}, 2.5, {ease: FlxEase.expoInOut});
-				FlxTween.tween(titleText, {y: 2000}, 2.5, {ease: FlxEase.expoInOut});
-	        	FlxTween.tween(logoBl, {alpha: 0}, 1.2, {ease: FlxEase.expoInOut});
-				FlxTween.tween(logoBl, {y: 2000}, 2.5, {ease: FlxEase.expoInOut});
-				FlxTween.tween(bgFlash, {y: 2000}, 2, {ease: FlxEase.expoInOut});
-                FlxTween.tween(bgMenu, {x: -1000}, 5, {ease: FlxEase.expoInOut});
                            			
 				transitioning = true;
 
@@ -358,12 +329,6 @@ class TitleState extends MusicBeatState
 		if (pressedEnter && !skippedIntro)
 		{
 			skipIntro();
-		}
-
-		if(swagShader != null)
-		{
-			if(controls.UI_LEFT) swagShader.hue -= elapsed * 0.1;
-			if(controls.UI_RIGHT) swagShader.hue += elapsed * 0.1;
 		}
 
 		super.update(elapsed);
@@ -408,23 +373,15 @@ class TitleState extends MusicBeatState
 	override function beatHit()
 	{
 		super.beatHit();
-                if(curBeat % 2 == 0)
-                FlxG.camera.zoom += 0.025;
-
-                bgFlash.alpha = 0.25;
-
-                FlxG.log.advanced(curBeat);
+        	if(curBeat % 2 == 0)
+        		FlxG.camera.zoom += 0.025;
+			FlxG.log.advanced(curBeat);
 
 		if(logoBl != null) 
 			logoBl.animation.play('bump', true);
 
 		if(gfDance != null) {
-			danceLeft = !danceLeft;
-
-			if (danceLeft)
-				gfDance.animation.play('danceRight');
-			else
-				gfDance.animation.play('danceLeft');
+			gfDance.animation.play('beat', true);
 		}
 
 		if(!closedState) {
@@ -432,7 +389,7 @@ class TitleState extends MusicBeatState
 			switch (curBeat)
 			{
 				case 1:
-					createCoolText(['Graphex Engine mod by'], 45);
+					createCoolText(['Graphex Engine by'], 45);
 				case 3:
 					addMoreText('XaleTheCat', 45);
 					addMoreText('PurSnake', 45);					
@@ -471,8 +428,7 @@ class TitleState extends MusicBeatState
 			FlxG.camera.flash(FlxColor.WHITE, 4);
 			remove(credGroup);
 			skippedIntro = true;
-                        bgFlash.alpha = 0.25;
-                        FlxG.sound.music.time = 9400;
+                FlxG.sound.music.time = 9400;
 		}
 	}
 }
