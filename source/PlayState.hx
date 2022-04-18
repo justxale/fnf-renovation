@@ -336,7 +336,7 @@ class PlayState extends MusicBeatState
 	var lightSource:BGSprite;
 	var gun:FlxSprite = new FlxSprite(500, 400);
 	var gunTween:FlxTween;
-	var noLongerActive:Bool = false;
+	var splash:FlxSprite;
 
 	override public function create()
 	{
@@ -594,7 +594,11 @@ class PlayState extends MusicBeatState
 
 				lightSource = new BGSprite('spookyShadow', -650, -335, 1, 1);
 				lightSource.setGraphicSize(Std.int(lightSource.width * 1.1));
-				add(lightSource); // AAAAAA, KILL ME, THIS IS SUCH A BULLSHIT - Xale		
+				add(lightSource); // AAAAAA, KILL ME, THIS IS SUCH A BULLSHIT - Xale
+				splash = new FlxSprite(-FlxG.width, -FlxG.height).makeGraphic(Std.int(FlxG.width * 3), Std.int(FlxG.height * 4), FlxColor.WHITE);
+				splash.alpha = 0;
+				add(splash);
+				splash.cameras = [camHUD];		
 		}
 
 		switch(curStage) {
@@ -4397,6 +4401,7 @@ function pauseState()
 			
 				case 105:
 					lightSource.visible = true;
+					lightFlash(splash);
 			}
 		}
 		
@@ -4759,9 +4764,14 @@ public static var othersCodeName:String = 'otherAchievements';
 		{
 			if(gunTween != null)
 				gunTween.cancel();
-			noLongerActive = false;
 			gun.alpha = 1;
 			gun.animation.play('shot', true);	
 			gunTween = FlxTween.tween(gun, {alpha: 0}, 1);
+		}
+	
+	function lightFlash(splash:FlxSprite)
+		{
+			splash.alpha = 1;
+			FlxTween.tween(splash, {alpha: 0}, 2);
 		}
 }
