@@ -193,7 +193,6 @@ class PlayState extends MusicBeatState
 	private var healthBarBG:AttachedSprite;
     public var healthBarHigh:AttachedSprite;
 	public var healthBar:FlxBar;
-    public var healthStrips:FlxSprite;
     public var healthBarWN:FlxBar;
 	var songPercent:Float = 0;
 
@@ -930,18 +929,15 @@ class PlayState extends MusicBeatState
         healthBarWN.visible = !ClientPrefs.hideHud;
 		add(healthBarWN);
 
-        healthStrips = new FlxSprite().loadGraphic(Paths.image('strips'));
- 	    healthStrips.y = FlxG.height * 0.90;
- 	    healthStrips.screenCenter(X);
- 	    healthStrips.scrollFactor.set();
- 	    healthStrips.visible = !ClientPrefs.hideHud;
-        healthStrips.color = FlxColor.BLACK;
- 	    healthStrips.blend = MULTIPLY;
- 	    healthStrips.x = healthBarBG.x-1.9;
-	    healthStrips.alpha = ClientPrefs.healthBarAlpha;
-
- 	    add(healthStrips);
- 	    if(ClientPrefs.downScroll) healthStrips.y = 0.11 * FlxG.height;
+		healthBarHigh = new AttachedSprite('healthBarGrad');
+		healthBarHigh.y = FlxG.height * 0.90;
+		healthBarHigh.screenCenter(X);
+		healthBarHigh.scrollFactor.set();
+		healthBarHigh.visible = !ClientPrefs.hideHud;
+		healthBarHigh.xAdd = -4;
+		healthBarHigh.yAdd = -4;
+		add(healthBarHigh);
+		if(ClientPrefs.downScroll) healthBarHigh.y = 0.11 * FlxG.height;
 
 		iconP1 = new HealthIcon(boyfriend.healthIcon, true);
 		iconP1.y = healthBarWN.y - 75;
@@ -1027,7 +1023,7 @@ class PlayState extends MusicBeatState
 		healthBar.cameras = [camHUD];
 		healthBarBG.cameras = [camHUD];
         healthBarWN.cameras = [camHUD];
-        healthStrips.cameras = [camHUD];
+		healthBarHigh.cameras = [camHUD];
 		iconP1.cameras = [camHUD];
 		iconP2.cameras = [camHUD];
 		scoreTxt.cameras = [camHUD];
@@ -1156,14 +1152,16 @@ class PlayState extends MusicBeatState
 		callOnLuas('onCreatePost', []);
 
 
-                for (elem in [healthBar, iconP1, iconP2, scoreTxt, healthBarWN, healthBarBG, healthBarHigh, timeBarBG, timeBar, judgementCounter, songTxt, healthStrips]) {
-			        if (elem != null) {
-			              elem.alpha = ClientPrefs.healthBarAlpha - 1;
-                                }  
+                for (elem in [healthBar, iconP1, iconP2, scoreTxt, healthBarWN, healthBarBG, healthBarHigh, timeBarBG, timeBar, judgementCounter, songTxt]) {
+			        if (elem != null)
+					{
+			            elem.alpha = ClientPrefs.healthBarAlpha - 1;
+                    }  
                 }
-				for (delem in [healthBar, iconP1, iconP2, healthBarWN, healthBarBG, healthBarHigh, healthStrips]) {
-			        if (delem != null) {
-                                (ClientPrefs.downScroll ?  delem.y -= 500 :  delem.y += 500);
+				for (delem in [healthBar, iconP1, iconP2, healthBarWN, healthBarBG, healthBarHigh]) {
+			        if (delem != null)
+					{
+                    	(ClientPrefs.downScroll ?  delem.y -= 500 :  delem.y += 500);
 				    }  
                 }
 		
@@ -1719,12 +1717,12 @@ class PlayState extends MusicBeatState
 						FlxG.sound.play(Paths.sound('introGo' + introSoundsSuffix), 0.6);
 
 
-                for (elem in [healthBar, iconP1, iconP2, scoreTxt, healthBarWN, healthBarBG, healthBarHigh, timeBarBG, timeBar, judgementCounter, songTxt, healthStrips]) {
+                for (elem in [healthBar, iconP1, iconP2, scoreTxt, healthBarWN, healthBarBG, healthBarHigh, timeBarBG, timeBar, judgementCounter, songTxt]) {
 			    if (elem != null) {
 			        FlxTween.tween(elem, {alpha: ClientPrefs.healthBarAlpha}, Conductor.crochet / 250, {ease: FlxEase.circOut});
                 }  }
 
-				for (delem in [healthBar, iconP1, iconP2, healthBarWN, healthBarBG, healthBarHigh, healthStrips]) {
+				for (delem in [healthBar, iconP1, iconP2, healthBarWN, healthBarBG, healthBarHigh]) {
 			        if (delem != null) {
 						FlxTween.tween(delem, {y: (ClientPrefs.downScroll ?  delem.y + 490 :  delem.y - 510)}, Conductor.crochet / 250, {ease: FlxEase.circOut});
 
@@ -4697,7 +4695,7 @@ public static var othersCodeName:String = 'otherAchievements';
 		{
 			redFlash();
 
-			for (helem in [healthBar, iconP1, iconP2, healthBarWN, healthBarBG, healthBarHigh, healthStrips]) {
+			for (helem in [healthBar, iconP1, iconP2, healthBarWN, healthBarBG, healthBarHigh]) {
 			    if (helem != null) {
 			        new FlxTimer().start(0.01, function(tmr:FlxTimer)
 						{
