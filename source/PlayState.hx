@@ -336,6 +336,12 @@ class PlayState extends MusicBeatState
 	var gun:FlxSprite = new FlxSprite(500, 400);
 	var gunTween:FlxTween;
 	var splash:FlxSprite;
+	var healVin:FlxSprite;
+	var hurtVin:FlxSprite;
+
+	var gfxSmoke:FlxSprite;
+	var gfxHeal:FlxSprite;
+	var gfxHurt:FlxSprite;
 
 	override public function create()
 	{
@@ -730,6 +736,30 @@ class PlayState extends MusicBeatState
 			camPos.y += gf.getGraphicMidpoint().y + gf.cameraPosition[1];
 		}
 
+		gfxSmoke = new FlxSprite(BF_X-500, BF_Y-200);
+		gfxSmoke.frames = Paths.getSparrowAtlas('gfxs/GfxSmoke');
+		gfxSmoke.animation.addByPrefix('trigger', 'GfxFire', 24, false);
+		gfxSmoke.scale.set(3, 3);
+		gfxSmoke.updateHitbox();
+		gfxSmoke.alpha = 0;
+		add(gfxSmoke);
+
+		gfxHurt = new FlxSprite(BF_X-500, BF_Y-200);
+		gfxHurt.frames = Paths.getSparrowAtlas('gfxs/GfxFire');
+		gfxHurt.animation.addByPrefix('trigger', 'GfxFire', 24, false);
+		gfxHurt.scale.set(3, 3);
+		gfxHurt.updateHitbox();
+		gfxHurt.alpha = 0;
+		add(gfxHurt);
+
+		gfxHeal = new FlxSprite(BF_X-200, BF_Y+200);
+		gfxHeal.frames = Paths.getSparrowAtlas('gfxs/GfxHeal');
+		gfxHeal.animation.addByPrefix('trigger', 'GfxHeal', 24, false);
+		gfxHeal.scale.set(3, 3);
+		gfxHeal.updateHitbox();
+		gfxHeal.alpha = 0;
+		add(gfxHeal);
+
 		if(dad.curCharacter.startsWith('gf')) {
 			dad.setPosition(GF_X, GF_Y);
 			if(gf != null)
@@ -821,7 +851,6 @@ class PlayState extends MusicBeatState
 		add(timeBar);
 		add(timeTxt);
 		timeBarBG.sprTracker = timeBar;
-
 
         strumLineNotes = new FlxTypedGroup<StrumNote>();
 		add(strumLineNotes);
@@ -1018,6 +1047,22 @@ class PlayState extends MusicBeatState
 		loseVin.alpha = 0.4;
 		add(loseVin);
 
+		hurtVin = new FlxSprite(-80).loadGraphic(Paths.image('vinhurt'));
+		hurtVin.scrollFactor.set();
+		hurtVin.updateHitbox();
+		hurtVin.screenCenter();
+		hurtVin.visible = true;
+		hurtVin.alpha = 0;
+		add(hurtVin);
+
+		healVin = new FlxSprite(-80).loadGraphic(Paths.image('vinhp'));
+		healVin.scrollFactor.set();
+		healVin.updateHitbox();
+		healVin.screenCenter();
+		healVin.visible = true;
+		healVin.alpha = 0;
+		add(healVin);
+
 		strumLineNotes.cameras = [camNOTEHUD];
 		notes.cameras = [camNOTES];
 		healthBar.cameras = [camHUD];
@@ -1037,6 +1082,8 @@ class PlayState extends MusicBeatState
         loseVin.cameras = [camHUD];
 		badLoseVin.cameras = [camHUD];
         songTxt.cameras = [camHUD];
+		hurtVin.cameras = [camHUD];
+		healVin.cameras = [camHUD];
 
 		startingSong = true;
 
@@ -2726,6 +2773,7 @@ class PlayState extends MusicBeatState
 								gf.animation.play('scared');
 								boyfriend.specialAnim = true;
 								gunShot();
+								triggerVinTween(2);
 								/*if(gunTween != null)
 									gunTween.cancel();*/
 
@@ -4042,6 +4090,7 @@ function pauseState()
 					FlxG.sound.play(Paths.sound('Damage'));
 					boyfriend.animation.play('hurt');
 					boyfriend.specialAnim = true;
+					triggerVinTween(1);
 			}
 			if(cpuControlled && (note.ignoreNote || note.hitCausesMiss)) return;
 
@@ -4139,13 +4188,12 @@ function pauseState()
 					gf.animation.play('scared');
 					boyfriend.specialAnim = true;
 					gunShot();
-					/*if(gunTween != null)
-						gunTween.cancel();*/
 
 				case 'Candy': // Candy note - Xale
 					health += 0.5;
 					FlxG.sound.play(Paths.sound('recovery'), 0.6);
 					boyfriend.animation.play('hey');
+					triggerVinTween(0);
 			}
 
 			if(cpuControlled) {
@@ -4772,4 +4820,33 @@ public static var othersCodeName:String = 'otherAchievements';
 			splash.alpha = 1;
 			FlxTween.tween(splash, {alpha: 0}, 2);
 		}
+
+	var vinTween:FlxTween;
+	var gfxTween:FlxTween;
+	function triggerVinTween(id:Int)
+	{
+		/*if(vinTween != null)
+			vinTween.cancel();
+		if(gfxTween != null)
+			gfxTween.cancel();*/
+
+		switch(id)
+		{
+			case 0:
+				healVin.alpha = 1;
+				gfxHeal.alpha = 1;
+				vinTween = FlxTween.tween(healVin, {alpha: 0}, 1, {ease: FlxEase.linear});
+				gfxTween = FlxTween.tween(gfxHeal, {alpha: 0}, 1, {ease: FlxEase.linear});
+			case 1:
+				hurtVin.alpha = 1;
+				gfxHurt.alpha = 1;
+				vinTween = FlxTween.tween(hurtVin, {alpha: 0}, 1, {ease: FlxEase.linear});
+				gfxTween = FlxTween.tween(gfxHurt, {alpha: 0}, 1, {ease: FlxEase.linear});
+			case 2:
+				gfxSmoke.alpha = 1;
+				gfxTween = FlxTween.tween(gfxSmoke, {alpha: 0}, 1, {ease: FlxEase.linear});
+			default:
+
+		}
+	}	
 }
