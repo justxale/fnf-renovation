@@ -64,6 +64,15 @@ class MainMenuState extends MusicBeatState
         
     override function create()
 	{
+		if(FreeplayState.fromFreplay)
+			{
+				FlxG.sound.playMusic(Paths.music('freakyMenu'), 0);
+				FlxG.sound.music.fadeIn(4, 0, 0.7);
+			}
+			
+		FreeplayState.fromFreplay = false;
+
+		
 		#if desktop
 		// Updating Discord Rich Presence
 		DiscordClient.changePresence("In the Menu", null);

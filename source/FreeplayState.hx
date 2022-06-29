@@ -51,8 +51,13 @@ class FreeplayState extends MusicBeatState
 	var intendedColor:Int;
 	var colorTween:FlxTween;
 
+	public static var fromFreplay:Bool = false;
+
 	override function create()
 	{
+		FlxG.sound.playMusic(Paths.music('optionsSong'), 0);
+		fromFreplay = true;
+
 		Application.current.window.title = Main.appTitle + ' - Freeplay Menu';
 		
 		PlayState.isStoryMode = false;

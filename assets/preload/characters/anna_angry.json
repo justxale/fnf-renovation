@@ -73,7 +73,7 @@
 			],
 			"indices": [],
 			"fps": 20,
-			"anim": "exhalation",
+			"anim": "exhale",
 			"loop": false,
 			"name": "anna_angry exhalation"
 		}

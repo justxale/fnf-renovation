@@ -1,10 +1,11 @@
 {
 	"idle_anim": "M Anna Idle",
-	"image": "Menu_Anna",
+	"image": "M_Anna",
 	"position": [
-		460,
-		391
+		440,
+		380
 	],
-	"scale": 0.35,
+	"flipX": false,
+	"scale": 0.4,
 	"confirm_anim": "M Dad Idle"
 }

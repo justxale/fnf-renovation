@@ -744,18 +744,18 @@ class PlayState extends MusicBeatState
 		gfxSmoke.alpha = 0;
 		add(gfxSmoke);
 
-		gfxHurt = new FlxSprite(BF_X-500, BF_Y-200);
+		gfxHurt = new FlxSprite(BF_X-50, BF_Y+300);
 		gfxHurt.frames = Paths.getSparrowAtlas('gfxs/GfxFire');
 		gfxHurt.animation.addByPrefix('trigger', 'GfxFire', 24, false);
-		gfxHurt.scale.set(3, 3);
+		//gfxHurt.scale.set(2, 2);
 		gfxHurt.updateHitbox();
 		gfxHurt.alpha = 0;
 		add(gfxHurt);
 
-		gfxHeal = new FlxSprite(BF_X-200, BF_Y+200);
+		gfxHeal = new FlxSprite(BF_X, BF_Y+350);
 		gfxHeal.frames = Paths.getSparrowAtlas('gfxs/GfxHeal');
 		gfxHeal.animation.addByPrefix('trigger', 'GfxHeal', 24, false);
-		gfxHeal.scale.set(3, 3);
+		//gfxHeal.scale.set(3, 3);
 		gfxHeal.updateHitbox();
 		gfxHeal.alpha = 0;
 		add(gfxHeal);
@@ -4835,15 +4835,18 @@ public static var othersCodeName:String = 'otherAchievements';
 			case 0:
 				healVin.alpha = 1;
 				gfxHeal.alpha = 1;
+				gfxHeal.animation.play('trigger');
 				vinTween = FlxTween.tween(healVin, {alpha: 0}, 1, {ease: FlxEase.linear});
 				gfxTween = FlxTween.tween(gfxHeal, {alpha: 0}, 1, {ease: FlxEase.linear});
 			case 1:
 				hurtVin.alpha = 1;
 				gfxHurt.alpha = 1;
+				gfxHurt.animation.play('trigger');
 				vinTween = FlxTween.tween(hurtVin, {alpha: 0}, 1, {ease: FlxEase.linear});
 				gfxTween = FlxTween.tween(gfxHurt, {alpha: 0}, 1, {ease: FlxEase.linear});
 			case 2:
 				gfxSmoke.alpha = 1;
+				gfxSmoke.animation.play('trigger');
 				gfxTween = FlxTween.tween(gfxSmoke, {alpha: 0}, 1, {ease: FlxEase.linear});
 			default:
 
