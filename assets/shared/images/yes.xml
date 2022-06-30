@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="yes.png">
+<SubTexture name="yes end0000" x="0" y="0" width="2569" height="669" frameX="0" frameY="0" frameWidth="2569" frameHeight="669" />
+<SubTexture name="yes end0001" x="2569" y="0" width="2569" height="669" frameX="0" frameY="0" frameWidth="2569" frameHeight="669" />
+<SubTexture name="yes end0002" x="5138" y="0" width="2569" height="669" frameX="0" frameY="0" frameWidth="2569" frameHeight="669" />
+<SubTexture name="yes end0003" x="7707" y="0" width="2569" height="669" frameX="0" frameY="0" frameWidth="2569" frameHeight="669" />
+<SubTexture name="yes end0004" x="0" y="669" width="2569" height="669" frameX="0" frameY="0" frameWidth="2569" frameHeight="669" />
+<SubTexture name="yes end0005" x="2569" y="669" width="2569" height="669" frameX="0" frameY="0" frameWidth="2569" frameHeight="669" />
+<SubTexture name="yes end0006" x="5138" y="669" width="2569" height="669" frameX="0" frameY="0" frameWidth="2569" frameHeight="669" />
+<SubTexture name="yes end0007" x="7707" y="669" width="2569" height="669" frameX="0" frameY="0" frameWidth="2569" frameHeight="669" />
+<SubTexture name="yes end0008" x="0" y="1338" width="2569" height="669" frameX="0" frameY="0" frameWidth="2569" frameHeight="669" />
+<SubTexture name="yes end0009" x="2569" y="1338" width="2569" height="669" frameX="0" frameY="0" frameWidth="2569" frameHeight="669" />
+<SubTexture name="yes idle0000" x="5138" y="1338" width="2569" height="669" frameX="0" frameY="0" frameWidth="2569" frameHeight="669" />
+<SubTexture name="yes idle0001" x="7707" y="1338" width="2569" height="669" frameX="0" frameY="0" frameWidth="2569" frameHeight="669" />
+<SubTexture name="yes start0000" x="0" y="2007" width="2569" height="669" frameX="0" frameY="0" frameWidth="2569" frameHeight="669" />
+<SubTexture name="yes start0001" x="2569" y="2007" width="2569" height="669" frameX="0" frameY="0" frameWidth="2569" frameHeight="669" />
+<SubTexture name="yes start0002" x="5138" y="2007" width="2569" height="669" frameX="0" frameY="0" frameWidth="2569" frameHeight="669" />
+<SubTexture name="yes start0003" x="7707" y="2007" width="2569" height="669" frameX="0" frameY="0" frameWidth="2569" frameHeight="669" />
+<SubTexture name="yes start0004" x="0" y="2676" width="2569" height="669" frameX="0" frameY="0" frameWidth="2569" frameHeight="669" />
+<SubTexture name="yes start0005" x="2569" y="2676" width="2569" height="669" frameX="0" frameY="0" frameWidth="2569" frameHeight="669" />
+<SubTexture name="yes start0006" x="5138" y="2676" width="2569" height="669" frameX="0" frameY="0" frameWidth="2569" frameHeight="669" />
+<SubTexture name="yes start0007" x="7707" y="2676" width="2569" height="669" frameX="0" frameY="0" frameWidth="2569" frameHeight="669" />
+<SubTexture name="yes start0008" x="0" y="3345" width="2569" height="669" frameX="0" frameY="0" frameWidth="2569" frameHeight="669" />
+<SubTexture name="yes start0009" x="2569" y="3345" width="2569" height="669" frameX="0" frameY="0" frameWidth="2569" frameHeight="669" />
+</TextureAtlas>

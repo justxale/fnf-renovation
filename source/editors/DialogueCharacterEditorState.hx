@@ -88,12 +88,12 @@ class DialogueCharacterEditorState extends MusicBeatState
 		mainGroup.cameras = [camGame];
 		hudGroup = new FlxSpriteGroup();
 		hudGroup.cameras = [camGame];
-		add(mainGroup);
+		//add(mainGroup);
 		add(hudGroup);
 
 		character = new DialogueCharacter();
 		character.scrollFactor.set();
-		mainGroup.add(character);
+		//mainGroup.add(character);
 		
 		ghostLoop = new DialogueCharacter();
 		ghostLoop.alpha = 0;
@@ -111,16 +111,18 @@ class DialogueCharacterEditorState extends MusicBeatState
 		ghostIdle.cameras = [camGame];
 		add(ghostIdle);
 
-		box = new FlxSprite(70, 370);
-		box.frames = Paths.getSparrowAtlas('speech_bubble');
+		box = new FlxSprite(-630, 230);
+		box.frames = Paths.getSparrowAtlas('yes');
 		box.scrollFactor.set();
 		box.antialiasing = ClientPrefs.globalAntialiasing;
-		box.animation.addByPrefix('normal', 'speech bubble normal', 24);
-		box.animation.addByPrefix('center', 'speech bubble middle', 24);
+		box.animation.addByPrefix('normal', 'yes idle', 2);
+		box.animation.addByPrefix('center', 'yes start', 24, false);
 		box.animation.play('normal', true);
-		box.setGraphicSize(Std.int(box.width * 0.9));
+		box.setGraphicSize(Std.int(box.width * 0.4));
 		box.updateHitbox();
 		hudGroup.add(box);
+		add(mainGroup);
+		mainGroup.add(character);
 
 		tipText = new FlxText(10, 10, FlxG.width - 20, TIP_TEXT_MAIN, 8);
 		tipText.setFormat(Paths.font("vcr.ttf"), 16, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);

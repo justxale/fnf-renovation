@@ -65,20 +65,27 @@ class DialogueEditorState extends MusicBeatState
 		
 		character = new DialogueCharacter();
 		character.scrollFactor.set();
-		add(character);
+		//add(character);
 
-		box = new FlxSprite(70, 370);
-		box.frames = Paths.getSparrowAtlas('speech_bubble');
+		box = new FlxSprite(-630, 230);
+		box.frames = Paths.getSparrowAtlas('yes');
 		box.scrollFactor.set();
 		box.antialiasing = ClientPrefs.globalAntialiasing;
-		box.animation.addByPrefix('normal', 'speech bubble normal', 24);
+		box.animation.addByPrefix('normal', 'yes idle', 2);
+		box.animation.addByPrefix('normalOpen', 'yes start', 24, false);
+		/*box.animation.addByPrefix('normal', 'speech bubble normal', 24);
+		box.animation.addByPrefix('normalOpen', 'Speech Bubble Normal Open', 24, false);
 		box.animation.addByPrefix('angry', 'AHH speech bubble', 24);
-		box.animation.addByPrefix('center', 'speech bubble middle', 24);
+		box.animation.addByPrefix('angryOpen', 'speech bubble loud open', 24, false);
+		box.animation.addByPrefix('center-normal', 'speech bubble middle', 24);
+		box.animation.addByPrefix('center-normalOpen', 'Speech Bubble Middle Open', 24, false);
 		box.animation.addByPrefix('center-angry', 'AHH Speech Bubble middle', 24);
+		box.animation.addByPrefix('center-angryOpen', 'speech bubble Middle loud open', 24, false);*/
 		box.animation.play('normal', true);
-		box.setGraphicSize(Std.int(box.width * 0.9));
+		box.setGraphicSize(Std.int(box.width * 0.4));
 		box.updateHitbox();
 		add(box);
+		add(character);
 
 		addEditorBox();
 		FlxG.mouse.visible = true;
@@ -233,7 +240,7 @@ class DialogueEditorState extends MusicBeatState
 
 		var textToType:String = lineInputText.text;
 		if(textToType == null || textToType.length < 1) textToType = ' ';
-		daText = new Alphabet(DialogueBoxPsych.DEFAULT_TEXT_X, DialogueBoxPsych.DEFAULT_TEXT_Y, textToType, false, true, speed, 0.7);
+		daText = new Alphabet(DialogueBoxPsych.DEFAULT_TEXT_X+300, DialogueBoxPsych.DEFAULT_TEXT_Y, textToType, true, true, speed, 0.6);
 		add(daText);
 
 		if(speed > 0) {

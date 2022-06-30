@@ -144,14 +144,14 @@ class PlayState extends MusicBeatState
 
 	public static var curStage:String = '';
 	public static var isPixelStage:Bool = false;
-        public static var NotesCanMoveCam:Bool = true;
+    public static var NotesCanMoveCam:Bool = true;
 	public static var SONG:SwagSong = null;
 	public static var isStoryMode:Bool = false;
 	public static var storyWeek:Int = 0;
 	public static var storyPlaylist:Array<String> = [];
 	public static var storyDifficulty:Int = 1;
 
-        public var pxgfdanced:Bool = false;
+    public var pxgfdanced:Bool = false;
 
 	public var vocals:FlxSound;
 
@@ -1169,6 +1169,12 @@ class PlayState extends MusicBeatState
 				case 'senpai' | 'roses' | 'thorns':
 					if(daSong == 'roses') FlxG.sound.play(Paths.sound('ANGRY'));
 					schoolIntro(doof);
+				case 'derelict' | 'frustration' :
+					startDialogue(dialogueJson, 'Clock');
+				case 'malady':
+					startDialogue(dialogueJson, 'am');
+				case 'peradventure':
+					startDialogue(dialogueJson, 'am');
 				default:
 					startCountdown();
 			}
@@ -2523,7 +2529,6 @@ class PlayState extends MusicBeatState
 				if (healthBar.percent < 20)
 					{
 						iconP1.animation.curAnim.curFrame = 1;
-						iconP2.animation.curAnim.curFrame = 2;
 						shakeFromLosing(iconP1);
 					}
 				else if (healthBar.percent > 20 && healthBar.percent < 80)
@@ -2533,7 +2538,6 @@ class PlayState extends MusicBeatState
 					}
 				else if (healthBar.percent > 80)
 					{
-						iconP1.animation.curAnim.curFrame = 2;
 						iconP2.animation.curAnim.curFrame = 1;
 						shakeFromLosing(iconP2);
 					}
@@ -4782,15 +4786,15 @@ public static var othersCodeName:String = 'otherAchievements';
 			        FlxTween.color(helem, 0.4, FlxColor.RED, FlxColor.WHITE, {ease: FlxEase.quadOut});
                 }  }
 
-			isHealthCheckingEnabled = false;
+			/*isHealthCheckingEnabled = false;
 
 			iconP1.animation.curAnim.curFrame = 1;
-			iconP2.animation.curAnim.curFrame = 2; 
+			//iconP2.animation.curAnim.curFrame = 2; 
 
 			new FlxTimer().start(1, function(tmr:FlxTimer)
 				{
 					isHealthCheckingEnabled = true;
-				});
+				});*/
 
  		} // Yeah? There was such a thing? Lmao - Xale
 
@@ -4818,7 +4822,7 @@ public static var othersCodeName:String = 'otherAchievements';
 	function lightFlash(splash:FlxSprite)
 		{
 			splash.alpha = 1;
-			FlxTween.tween(splash, {alpha: 0}, 2);
+			FlxTween.tween(splash, {alpha: 0}, 4);
 		}
 
 	var vinTween:FlxTween;

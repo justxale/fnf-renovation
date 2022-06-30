@@ -163,7 +163,7 @@ class DialogueCharacter extends FlxSprite
 // TO DO: Clean code? Maybe? idk
 class DialogueBoxPsych extends FlxSpriteGroup
 {
-	var dialogue:Alphabet;
+	var dialogue:DialAlphabet;
 	var dialogueList:DialogueFile = null;
 
 	public var finishThing:Void->Void;
@@ -197,25 +197,29 @@ class DialogueBoxPsych extends FlxSpriteGroup
 		add(bgFade);
 
 		this.dialogueList = dialogueList;
-		spawnCharacters();
+		//spawnCharacters();
 
-		box = new FlxSprite(70, 370);
-		box.frames = Paths.getSparrowAtlas('speech_bubble');
+		box = new FlxSprite(-630, 230);
+		box.frames = Paths.getSparrowAtlas('yes');
 		box.scrollFactor.set();
 		box.antialiasing = ClientPrefs.globalAntialiasing;
-		box.animation.addByPrefix('normal', 'speech bubble normal', 24);
+		box.animation.addByPrefix('normal', 'yes idle', 2);
+		box.animation.addByPrefix('normalOpen', 'yes start', 24, false);
+		/*box.animation.addByPrefix('normal', 'speech bubble normal', 24);
 		box.animation.addByPrefix('normalOpen', 'Speech Bubble Normal Open', 24, false);
 		box.animation.addByPrefix('angry', 'AHH speech bubble', 24);
 		box.animation.addByPrefix('angryOpen', 'speech bubble loud open', 24, false);
 		box.animation.addByPrefix('center-normal', 'speech bubble middle', 24);
 		box.animation.addByPrefix('center-normalOpen', 'Speech Bubble Middle Open', 24, false);
 		box.animation.addByPrefix('center-angry', 'AHH Speech Bubble middle', 24);
-		box.animation.addByPrefix('center-angryOpen', 'speech bubble Middle loud open', 24, false);
+		box.animation.addByPrefix('center-angryOpen', 'speech bubble Middle loud open', 24, false);*/
 		box.animation.play('normal', true);
 		box.visible = false;
-		box.setGraphicSize(Std.int(box.width * 0.9));
+		box.setGraphicSize(Std.int(box.width * 0.4));
 		box.updateHitbox();
 		add(box);
+
+		spawnCharacters();
 
 		startNextDialog();
 	}
@@ -277,7 +281,7 @@ class DialogueBoxPsych extends FlxSpriteGroup
 	public static var DEFAULT_TEXT_X = 90;
 	public static var DEFAULT_TEXT_Y = 430;
 	var scrollSpeed = 4500;
-	var daText:Alphabet = null;
+	var daText:DialAlphabet = null;
 	var ignoreThisFrame:Bool = true; //First frame is reserved for loading dialogue images
 	override function update(elapsed:Float)
 	{
@@ -299,7 +303,7 @@ class DialogueBoxPsych extends FlxSpriteGroup
 						remove(daText);
 						daText.destroy();
 					}
-					daText = new Alphabet(DEFAULT_TEXT_X, DEFAULT_TEXT_Y, textToType, false, true, 0.0, 0.7);
+					daText = new DialAlphabet(DEFAULT_TEXT_X+300, DEFAULT_TEXT_Y, textToType, false, true, 0.0, 0.6);
 					add(daText);
 					
 					if(skipDialogueThing != null) {
@@ -492,7 +496,7 @@ class DialogueBoxPsych extends FlxSpriteGroup
 		}
 
 		textToType = curDialogue.text;
-		daText = new Alphabet(DEFAULT_TEXT_X, DEFAULT_TEXT_Y, textToType, false, true, curDialogue.speed, 0.7);
+		daText = new DialAlphabet(DEFAULT_TEXT_X+300, DEFAULT_TEXT_Y, textToType, false, true, curDialogue.speed, 0.6);
 		add(daText);
 
 		var char:DialogueCharacter = arrayCharacters[character];

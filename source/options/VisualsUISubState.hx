@@ -34,7 +34,7 @@ class VisualsUISubState extends BaseOptionsMenu
 		title = 'Visuals and UI';
 		rpcTitle = 'Visuals & UI Settings Menu'; //for Discord Rich Presence
                 
-                var option:Option = new Option('Show Judgement',
+            var option:Option = new Option('Show Judgement',
 			'If checked, shows judgement HUD.',
 			'showjud',
 			'bool',
@@ -61,15 +61,8 @@ class VisualsUISubState extends BaseOptionsMenu
 			'bool',
 			true);
 		addOption(option);
-
-		var option:Option = new Option('Hide HUD',
-			'If checked, hides most HUD elements.',
-			'hideHud',
-			'bool',
-			false);
-		addOption(option);
 		
-                var option:Option = new Option('Icon Bopping Type:',
+            var option:Option = new Option('Icon Bopping Type:',
 			"How will icon bops like.",
 			'hliconbop',
 			'string',

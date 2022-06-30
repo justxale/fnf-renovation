@@ -7,7 +7,7 @@
 		"player3": null,
 		"events": [
 			[
-				4000,
+				3909.09090909091,
 				[
 					[
 						"Play Animation",
@@ -23,6 +23,11 @@
 						"Screen Shake",
 						"1.2, 0.05",
 						""
+					],
+					[
+						"Play Animation",
+						"scream",
+						"Dad"
 					]
 				]
 			],
@@ -31,7 +36,7 @@
 				[
 					[
 						"Play Animation",
-						"exhalation",
+						"exhale",
 						"Dad"
 					]
 				]
@@ -43,6 +48,11 @@
 						"Screen Shake",
 						"1.2, 0.05",
 						""
+					],
+					[
+						"Play Animation",
+						"scream",
+						"Dad"
 					]
 				]
 			]
