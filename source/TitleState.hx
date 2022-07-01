@@ -388,26 +388,31 @@ class TitleState extends MusicBeatState
 			sickBeats++;
 			switch (curBeat)
 			{
-				case 1:
-					createCoolText(['Graphex Engine by'], 45);
-				case 3:
-					addMoreText('XaleTheCat', 45);
-					addMoreText('PurSnake', 45);					
-				case 5:
+				case 2:
+					createCoolText(['This mod is by'], 45);
+				case 4:
+					addMoreText('Andriana Mantidfly', 45);
+					addMoreText('BlueHeart', 45);	
+					addMoreText('Ugoama', 45);				
+				case 6:
                     deleteCoolText();
-					createCoolText(['Forked', 'from'], 15);
-				case 7:
-					addMoreText('Psych Engine', 45);			
+					addMoreText('mirnoff', 45);
+					addMoreText('matuha', 45);	
+					addMoreText('Paskida', 45);	
 				case 8:
 					deleteCoolText();
-				case 9:
-					createCoolText([curWacky[0]]);
-				case 11:
-					addMoreText(curWacky[1]);
-				case 12:
+					addMoreText('Yamahearted', 45);
+					addMoreText('AlterXale', 45);	
+					addMoreText('PurSnake', 45);	
+				case 10:
 					deleteCoolText();
+					addMoreText('Kamidashi', 45);
+					addMoreText('JustDenys1', 45);	
+					addMoreText('JustKostya', 45);	
+				case 12:
+					deleteCoolText();	
 				case 13:
-					addMoreText('Friday');
+					addMoreText('Trivial');
 				case 14:
 					addMoreText('Night');
 				case 15:
