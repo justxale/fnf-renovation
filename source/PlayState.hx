@@ -567,6 +567,7 @@ class PlayState extends MusicBeatState
 				if(!ClientPrefs.lowQuality) {
 					var stageCurtains:BGSprite = new BGSprite('stagecurtains', -500, -180, 1, 1);
 					stageCurtains.setGraphicSize(Std.int(stageCurtains.width * 0.9));
+					stageCurtains.scale.x = 1.1;
 					stageCurtains.updateHitbox();
 					add(stageCurtains);
 				}
@@ -584,6 +585,7 @@ class PlayState extends MusicBeatState
 					var stageCurtains:BGSprite = new BGSprite('stagecurtains', -500, -180, 1, 1);
 					stageCurtains.setGraphicSize(Std.int(stageCurtains.width * 0.9));
 					stageCurtains.updateHitbox();
+					stageCurtains.scale.x = 1.1;
 					add(stageCurtains);
 				}
 
@@ -1174,7 +1176,7 @@ class PlayState extends MusicBeatState
 				case 'malady':
 					startDialogue(dialogueJson, 'am');
 				case 'peradventure':
-					startDialogue(dialogueJson, 'am');
+					startDialogue(dialogueJson, 'am2');
 				default:
 					startCountdown();
 			}
@@ -2071,7 +2073,7 @@ class PlayState extends MusicBeatState
 	}
 
 	function eventPushed(event:EventNote) {
-		switch(event.event) {
+		/*switch(event.event) {
 			case 'Change Character':
 				var charType:Int = 0;
 				switch(event.value1.toLowerCase()) {
@@ -2090,7 +2092,7 @@ class PlayState extends MusicBeatState
 
 		if(!eventPushedMap.exists(event.event)) {
 			eventPushedMap.set(event.event, true);
-		}
+		}*/
 	}
 
 	function eventNoteEarlyTrigger(event:EventNote):Float {
@@ -3178,7 +3180,7 @@ function pauseState()
 					}
 				}
 
-			case 'Change Character':
+			/*case 'Change Character':
 				var charType:Int = 0;
 				switch(value1) {
 					case 'gf' | 'girlfriend':
@@ -3246,7 +3248,7 @@ function pauseState()
 						}
 					
 				}
-				reloadHealthBarColors();
+				reloadHealthBarColors();*/
 			
 			case 'BG Freaks Expression':
 				if(bgGirls != null) bgGirls.swapDanceType();
@@ -4440,21 +4442,7 @@ function pauseState()
 		if(lastBeatHit >= curBeat) {
 			//trace('BEAT HIT: ' + curBeat + ', LAST HIT: ' + lastBeatHit);
 			return;
-		}
-
-		if(curStage=='follybg')
-		{
-			switch(curBeat)
-			{
-				case 89:
-					lightSource.visible = false;
-			
-				case 105:
-					lightSource.visible = true;
-					lightFlash(splash);
-			}
-		}
-		
+		}		
 
 		if (healthBar.percent < 20)
 			if(!endingSong)
