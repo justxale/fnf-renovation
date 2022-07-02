@@ -2643,7 +2643,7 @@ class PlayState extends MusicBeatState
 
 		if (generatedMusic)
 		{
-                   if (!inCutscene) {
+            if (!inCutscene) {
 				if(!cpuControlled) {
 					keyShit();
 				} else if(boyfriend.holdTimer > Conductor.stepCrochet * 0.001 * boyfriend.singDuration && boyfriend.animation.curAnim.name.startsWith('sing') && !boyfriend.animation.curAnim.name.endsWith('miss')) {
@@ -2751,7 +2751,7 @@ class PlayState extends MusicBeatState
 					opponentNoteHit(daNote);
 				}
 
-				if(daNote.mustPress && cpuControlled) {
+				if(daNote.mustPress && cpuControlled && daNote.noteType != 'Hurt Note') {
 					if(daNote.isSustainNote) {
 						if(daNote.canBeHit) {
 							goodNoteHit(daNote);
