@@ -61,9 +61,9 @@
 				0
 			],
 			"indices": [],
-			"fps": 24,
+			"fps": 6,
 			"anim": "laugh",
-			"loop": true,
+			"loop": false,
 			"name": "folly_angry laugh"
 		}
 	],

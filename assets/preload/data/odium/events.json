@@ -1,58 +1,70 @@
 {
 	"song": {
 		"speed": 2.5,
-		"stage": "follybg",
+		"stage": "crazyfollybg",
 		"player1": "bf",
 		"player2": "folly",
 		"player3": null,
 		"events": [
 			[
-				9970.58823529412,
+				9882.35294117647,
 				[
 					[
 						"Play Animation",
 						"laugh",
-						"dad"
+						"Dad"
 					]
 				]
 			],
 			[
-				43764.7058823529,
+				10058.8235294118,
 				[
 					[
 						"Play Animation",
 						"laugh",
-						"dad"
+						"Dad"
 					]
 				]
 			],
 			[
-				66352.9411764705,
+				10235.2941176471,
 				[
 					[
 						"Play Animation",
 						"laugh",
-						"dad"
+						"Dad"
 					]
 				]
 			],
 			[
-				88941.1764705881,
+				10411.7647058824,
 				[
 					[
 						"Play Animation",
 						"laugh",
-						"dad"
+						"Dad"
 					]
 				]
+			],
+			[
+				10588.2352941176,
+				[
+					[
+						"Play Animation",
+						"laugh",
+						"Dad"
+					]
+				],
+				null,
+				"No Animation"
 			]
 		],
 		"notes": [],
-		"splashSkin": null,
+		"splashSkin": "noteSplashes",
 		"validScore": false,
 		"gfVersion": "gf",
 		"bpm": 170,
-		"arrowSkin": null,
+		"arrowSkin": "",
 		"needsVoices": true,
 		"song": "Odium"
 	}

@@ -393,7 +393,8 @@ class TitleState extends MusicBeatState
 				case 4:
 					addMoreText('Andriana Mantidfly', 45);
 					addMoreText('BlueHeart', 45);	
-					addMoreText('Ugoama', 45);				
+					addMoreText('Ugoama', 45);	
+					addMoreText('Danremix', 45);		
 				case 6:
                     deleteCoolText();
 					addMoreText('mirnoff', 45);
@@ -433,7 +434,7 @@ class TitleState extends MusicBeatState
 			FlxG.camera.flash(FlxColor.WHITE, 4);
 			remove(credGroup);
 			skippedIntro = true;
-                FlxG.sound.music.time = 9400;
+            FlxG.sound.music.time = 9400;
 		}
 	}
 }

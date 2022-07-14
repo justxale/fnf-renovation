@@ -72,7 +72,6 @@
 	<assets path="assets/renovation"    library="renovation"    exclude="*.ogg" if="web"/>
 	<assets path="assets/renovation"    library="renovation"    exclude="*.mp3" unless="web"/>
 
-	<assets path='example_mods' rename='mods' embed='false' if="MODS_ALLOWED"/>	
 	<assets path='extra/readme.txt' rename='you MUST readme.txt' />
 
 	<haxelib name="actuate" />
