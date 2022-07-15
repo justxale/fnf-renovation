@@ -1,0 +1,67 @@
+{
+	"dialogue": [
+		{
+			"speed": 0.05,
+			"portrait": "folly",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "Hey, pal."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "folly",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "I want to show you a little trick."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "folly",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "When lightbulb's gonna light up,\\nyou'll see some real abstract art."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "Ba bop ba dop bop."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "folly",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "When you sing, people draw their\\nattention to you."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "folly",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "But now no one can see us."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "folly",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "We don't have much time left."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "folly",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "If Anna wakes up, it'll be late."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "folly",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "So prepare yourself, little one."
+		}
+	]
+}

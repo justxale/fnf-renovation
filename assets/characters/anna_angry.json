@@ -1,0 +1,100 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "anna_angry singLEFT",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "anna_angry idle",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "anna_angry singUP",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "anna_angry singRIGHT",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "anna_angry singDOWN",
+			"indices": []
+		},
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "scream",
+			"loop": true,
+			"name": "anna_angry scream"
+		},
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"indices": [],
+			"fps": 20,
+			"anim": "exhale",
+			"loop": false,
+			"name": "anna_angry exhalation"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/anna_angry",
+	"position": [
+		-200,
+		-190
+	],
+	"healthicon": "angryanna",
+	"flip_x": false,
+	"healthbar_colors": [
+		141,
+		141,
+		141
+	],
+	"camera_position": [
+		15,
+		165
+	],
+	"sing_duration": 6.1,
+	"scale": 0.65
+}

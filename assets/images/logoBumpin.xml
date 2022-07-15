@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath=".png">
+<SubTexture name="logo bumpin0000" x="0" y="0" width="784" height="534" frameX="0" frameY="0" frameWidth="784" frameHeight="534" />
+<SubTexture name="logo bumpin0001" x="784" y="0" width="784" height="534" frameX="0" frameY="0" frameWidth="784" frameHeight="534" />
+<SubTexture name="logo bumpin0002" x="1568" y="0" width="784" height="534" frameX="0" frameY="0" frameWidth="784" frameHeight="534" />
+<SubTexture name="logo bumpin0003" x="0" y="534" width="784" height="534" frameX="0" frameY="0" frameWidth="784" frameHeight="534" />
+<SubTexture name="logo bumpin0004" x="784" y="534" width="784" height="534" frameX="0" frameY="0" frameWidth="784" frameHeight="534" />
+<SubTexture name="logo bumpin0005" x="1568" y="534" width="784" height="534" frameX="0" frameY="0" frameWidth="784" frameHeight="534" />
+<SubTexture name="logo bumpin0006" x="0" y="1068" width="784" height="534" frameX="0" frameY="0" frameWidth="784" frameHeight="534" />
+<SubTexture name="logo bumpin0007" x="784" y="1068" width="784" height="534" frameX="0" frameY="0" frameWidth="784" frameHeight="534" />
+<SubTexture name="logo bumpin0008" x="1568" y="1068" width="784" height="534" frameX="0" frameY="0" frameWidth="784" frameHeight="534" />
+<SubTexture name="logo bumpin0009" x="0" y="1602" width="784" height="534" frameX="0" frameY="0" frameWidth="784" frameHeight="534" />
+<SubTexture name="logo bumpin0010" x="784" y="1602" width="784" height="534" frameX="0" frameY="0" frameWidth="784" frameHeight="534" />
+<SubTexture name="logo bumpin0011" x="1568" y="1602" width="784" height="534" frameX="0" frameY="0" frameWidth="784" frameHeight="534" />
+<SubTexture name="logo bumpin0012" x="0" y="2136" width="784" height="534" frameX="0" frameY="0" frameWidth="784" frameHeight="534" />
+<SubTexture name="logo bumpin0013" x="784" y="2136" width="784" height="534" frameX="0" frameY="0" frameWidth="784" frameHeight="534" />
+<SubTexture name="logo bumpin0014" x="1568" y="2136" width="784" height="534" frameX="0" frameY="0" frameWidth="784" frameHeight="534" />
+</TextureAtlas>

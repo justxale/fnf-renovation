@@ -1,9 +1,0 @@
-{
-	"directory": "renovation",
-	"defaultZoom": 0.86,
-	"isPixelStage": false,
-
-	"boyfriend": [1100, 100],
-	"girlfriend": [400, 130],
-	"opponent": [0, 120]
-}

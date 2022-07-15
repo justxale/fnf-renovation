@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="GfxHeal.png"><SubTexture name="GfxHeal0000" x="440" y="416" width="439" height="99" frameX="-5" frameY="-100" frameWidth="450" frameHeight="300" />
+<SubTexture name="GfxHeal0001" x="0" y="416" width="440" height="103" frameX="-5" frameY="-98" frameWidth="450" frameHeight="300" />
+<SubTexture name="GfxHeal0002" x="0" y="519" width="435" height="99" frameX="-7" frameY="-100" frameWidth="450" frameHeight="300" />
+<SubTexture name="GfxHeal0003" x="435" y="300" width="438" height="105" frameX="-6" frameY="-97" frameWidth="450" frameHeight="300" />
+<SubTexture name="GfxHeal0004" x="0" y="300" width="435" height="116" frameX="-7" frameY="-92" frameWidth="450" frameHeight="300" />
+<SubTexture name="GfxHeal0005" x="450" y="152" width="440" height="134" frameX="-5" frameY="-83" frameWidth="450" frameHeight="300" />
+<SubTexture name="GfxHeal0006" x="450" y="0" width="447" height="152" frameX="-1" frameY="-74" frameWidth="450" frameHeight="300" />
+<SubTexture name="GfxHeal0007" x="450" y="152" width="440" height="134" frameX="-5" frameY="-83" frameWidth="450" frameHeight="300" />
+<SubTexture name="GfxHeal0008" x="0" y="300" width="435" height="116" frameX="-7" frameY="-92" frameWidth="450" frameHeight="300" />
+<SubTexture name="GfxHeal0009" x="435" y="300" width="438" height="105" frameX="-6" frameY="-97" frameWidth="450" frameHeight="300" />
+<SubTexture name="GfxHeal0010" x="0" y="519" width="435" height="99" frameX="-7" frameY="-100" frameWidth="450" frameHeight="300" />
+<SubTexture name="GfxHeal0011" x="0" y="416" width="440" height="103" frameX="-5" frameY="-98" frameWidth="450" frameHeight="300" />
+<SubTexture name="GfxHeal0012" x="440" y="416" width="439" height="99" frameX="-5" frameY="-100" frameWidth="450" frameHeight="300" />
+<SubTexture name="GfxHeal0013" x="0" y="0" width="450" height="300" frameX="0" frameY="0" frameWidth="450" frameHeight="300" />
+</TextureAtlas>
